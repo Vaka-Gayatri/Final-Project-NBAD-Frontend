@@ -14,7 +14,7 @@ export class UserService {
   getUser(){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post('http://localhost:3000/get-user', {'userToken' : this.userToken},{
+    return this.http.post('https://gayatribackend.herokuapp.com/get-user', {'userToken' : this.userToken},{
       headers: { 'Content-Type': 'application/json' },
     });
   }

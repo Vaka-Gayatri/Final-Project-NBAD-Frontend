@@ -16,14 +16,14 @@ export class DataService {
   //  tslint:disable-next-line: typedef
    getData() {
     // console.log(localStorage.getItem());
-    return this.http.get('http://localhost:3000/budget');
+    return this.http.get('https://gayatribackend.herokuapp.com/budget');
   }
 
   getBudgetById(userData: User) {
     console.log(userData);
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post('http://localhost:3000/budget_ById', userData,{
+    return this.http.post('https://gayatribackend.herokuapp.com/budget_ById', userData,{
       headers: { 'Content-Type': 'application/json', 'Authorization' : `Bearer ${this.token}` },
     });
   }
@@ -31,7 +31,7 @@ export class DataService {
   addBudget(budget: Budget, userData : User ){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post('http://localhost:3000/add-budget', {budget, userData},{
+    return this.http.post('https://gayatribackend.herokuapp.com/add-budget', {budget, userData},{
       headers: { 'Content-Type': 'application/json','Authorization' : `Bearer ${this.token}` },
     });
   }
@@ -39,7 +39,7 @@ export class DataService {
   createUser(user: User) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post('http://localhost:3000/register',  user, {
+    return this.http.post('https://gayatribackend.herokuapp.com/register',  user, {
       headers: { 'Content-Type': 'application/json' },
     });
   }
@@ -48,7 +48,7 @@ export class DataService {
     console.log('*************' + userData);
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post('http://localhost:3000/api/login/', userData , {
+    return this.http.post('https://gayatribackend.herokuapp.com/api/login/', userData , {
       headers: { 'Content-Type': 'application/json' },
     });
   }
@@ -56,7 +56,7 @@ export class DataService {
   updateUserCategory(userCategory: any, userData: any){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post('http://localhost:3000/add-user-category', {userCategory, userData},{
+    return this.http.post('https://gayatribackend.herokuapp.com/add-user-category', {userCategory, userData},{
       headers: { 'Content-Type': 'application/json', 'Authorization' : `Bearer ${this.token}`},
     });
   }
@@ -64,7 +64,7 @@ export class DataService {
   getBarChartData(userData: any){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post('http://localhost:3000/get_barGraphData', {userData},{
+    return this.http.post('https://gayatribackend.herokuapp.com/get_barGraphData', {userData},{
       headers: { 'Content-Type': 'application/json', 'Authorization' : `Bearer ${this.token}`},
     });
   }
